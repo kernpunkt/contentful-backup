@@ -29,7 +29,7 @@ This repository is a CDK stack which deploys a Lambda function and a S3 bucket t
 ## Useful commands
 
 | Command         | Result                                               |
-|-----------------|------------------------------------------------------|
+| --------------- | ---------------------------------------------------- |
 | `npm run build` | compile typescript to js                             |
 | `npm run watch` | watch for changes and compile                        |
 | `npm run test`  | perform the jest unit tests                          |
