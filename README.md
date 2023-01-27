@@ -20,8 +20,8 @@ This repository is a CDK stack which deploys a Lambda function and a S3 bucket t
 ## Deploy
 
 1. **Create your own environment file** by executing `cp .env.example .env`.
-2. **Modify the values** in the `.env` file to your liking. Please pay special attention to the `SCHEDULE` variable.
-3. Afterwards, run `cdk synth`[^1].
+2. **Modify the values** in the `.env` file to your liking. Please pay special attention to the `SCHEDULE` variable[^1].
+3. Afterwards, run `cdk synth`[^2].
 4. Your backups will automatically show up in the S3 bucket called `[YOUR_PREFIX]-contentful-backup-bucket`.
 
 ---
@@ -42,4 +42,5 @@ This repository is a CDK stack which deploys a Lambda function and a S3 bucket t
 [joern-link-email]: mailto:joern.meyer@kernpunkt.de
 [logo-funkeys]: https://res.cloudinary.com/ddux8vytr/image/upload/w_100/v1674478625/kpotkgezxhtytnhsrhlk.jpg
 
-[^1]: Remember to `export AWS_PROFILE=your-aws-profile` beforehand.
+[^1]: AWS uses the UTC timezone, so adjust accordingly.
+[^2]: Remember to `export AWS_PROFILE=your-aws-profile` beforehand.
