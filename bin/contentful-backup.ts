@@ -2,9 +2,14 @@
 import "source-map-support/register";
 import * as cdk from "aws-cdk-lib";
 import { ContentfulBackupStack } from "../lib/contentful-backup-stack";
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
+const { PREFIX } = process.env;
 
 const app = new cdk.App();
-new ContentfulBackupStack(app, "ContentfulBackupStack", {
+new ContentfulBackupStack(app, `${PREFIX}-ContentfulBackupStack`, {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
