@@ -51,7 +51,7 @@ export class ContentfulBackupStack extends cdk.Stack {
           CONTENTFUL_SPACE_ID: CONTENTFUL_SPACE_ID as string,
           CONTENTFUL_ENVIRONMENT_ID: CONTENTFUL_ENVIRONMENT_ID as string,
         },
-        // This function usually needs a few more
+        // This function usually needs a longer timeout than the default
         timeout: cdk.Duration.minutes(parseInt(TIMEOUT_MINUTES as string)),
         memorySize: parseInt(MEMORY_SIZE as string),
       }
