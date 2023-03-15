@@ -29,7 +29,7 @@ This repository is a CDK stack which deploys a Lambda function and a S3 bucket t
 ## Configuration variables
 
 | Variable                      | Use                                                                                                                                                                             |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `CONTENTFUL_MANAGEMENT_TOKEN` | Your personal access token for the Contentful Management API. [Find yours here.][pat]                                                                                           |
 | `CONTENTFUL_SPACE_ID`         | The space ID for your Contentful space. [Find yours here.][space-id]                                                                                                            |
 | `CONTENTFUL_ENVIRONMENT_ID`   | The identifier for your Contentful environment. Default is `master`.                                                                                                            |
@@ -58,5 +58,6 @@ This repository is a CDK stack which deploys a Lambda function and a S3 bucket t
 
 [^1]: AWS uses the UTC timezone, so adjust accordingly.
 [^2]: Remember to `export AWS_PROFILE=your-aws-profile` beforehand.
-[pat]:https://www.contentful.com/developers/docs/references/authentication#getting-a-personal-access-token
-[space-id]:https://www.contentful.com/help/find-space-id/
+
+[pat]: https://www.contentful.com/developers/docs/references/authentication#getting-a-personal-access-token
+[space-id]: https://www.contentful.com/help/find-space-id/
