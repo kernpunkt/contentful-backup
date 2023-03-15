@@ -26,6 +26,20 @@ This repository is a CDK stack which deploys a Lambda function and a S3 bucket t
 
 ---
 
+## Configuration variables
+
+| Variable                      | Use                                                                                                                                                                             |
+|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `CONTENTFUL_MANAGEMENT_TOKEN` | Your personal access token for the Contentful Management API. [Find yours here.][pat]                                                                                           |
+| `CONTENTFUL_SPACE_ID`         | The space ID for your Contentful space. [Find yours here.][space-id]                                                                                                            |
+| `CONTENTFUL_ENVIRONMENT_ID`   | The identifier for your Contentful environment. Default is `master`.                                                                                                            |
+| `PREFIX`                      | This string gets prefixed to all resource names in your AWS so you can run multiple backups for multiple Contentful spaces in the same AWS account without namespace pollution. |
+| `SCHEDULE`                    | The schedule your backups should be created on. Uses cron syntax, so, for example `cron(0 23 * * ? *)` will make a backup every night at 11pm.                                  |
+| `TIMEOUT_MINUTES`             | The timeout in minutes for the Lambda function creating your backups.                                                                                                           |
+| `MEMORY_SIZE`                 | The memory limit for the Lambda function in MB.                                                                                                                                 |
+
+---
+
 ## Useful commands
 
 | Command         | Result                                               |
@@ -44,3 +58,5 @@ This repository is a CDK stack which deploys a Lambda function and a S3 bucket t
 
 [^1]: AWS uses the UTC timezone, so adjust accordingly.
 [^2]: Remember to `export AWS_PROFILE=your-aws-profile` beforehand.
+[pat]:https://www.contentful.com/developers/docs/references/authentication#getting-a-personal-access-token
+[space-id]:https://www.contentful.com/help/find-space-id/
