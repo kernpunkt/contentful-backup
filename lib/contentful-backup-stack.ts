@@ -57,8 +57,10 @@ export class ContentfulBackupStack extends cdk.Stack {
       }
     );
 
+    // Allow backup function to write to S3 bucket
     bucket.grantWrite(contentfulBackupFunction);
 
+    // Create rule to invoke Lambda function on a schedule
     const rule = new Rule(this, `${PREFIX}-contentful-backup-rule`, {
       schedule: Schedule.expression(SCHEDULE as string),
     });
