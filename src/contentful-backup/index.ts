@@ -9,12 +9,14 @@ export const handler = async (
   event: APIGatewayEvent,
   context: Context
 ): Promise<any> => {
+  // Path to the Contentful CLI executable
   const executable = path.join(
     process.env.LAMBDA_TASK_ROOT as string,
     "/node_modules/contentful-cli/bin/contentful.js"
   );
   const exportDir = "/tmp";
 
+  // All the arguments to be assembled into a long command
   const exportArgs: string[] = [
     executable,
     "space",
@@ -26,6 +28,7 @@ export const handler = async (
   ];
 
   const promise = new Promise((resolve, reject) => {
+    // Spawn a child process and attach listeners
     const child = spawn("node", exportArgs, {
       stdio: "pipe",
     });
@@ -40,6 +43,7 @@ export const handler = async (
       console.error(`stdout: ${error.message}`);
     });
     child.on("close", async (code) => {
+      // Reject the promise if the child process (Contentful CLI) was not successful
       if (code !== 0) {
         reject(code);
       }
@@ -58,6 +62,7 @@ export const handler = async (
           console.log(`reading file ${filePath}...`);
           const base64data = readFileSync(filePath);
 
+          // Upload backup file
           const putParams: PutObjectRequest = {
             Bucket: process.env.BUCKET_NAME as BucketName,
             Key: file,
@@ -66,6 +71,7 @@ export const handler = async (
 
           await s3.upload(putParams).promise();
 
+          // Delete local file
           unlinkSync(filePath);
           console.log(`Done with ${file}`);
         })
