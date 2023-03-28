@@ -31,6 +31,7 @@ export class ContentfulBackupStack extends cdk.Stack {
       publicReadAccess: false,
       blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
       removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     // Create Lambda function
