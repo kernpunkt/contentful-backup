@@ -26,7 +26,7 @@
     "typescript": "~4.9.4"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.61.0",
+    "aws-cdk-lib": "^2.80",
     "aws-sdk": "^2.1303.0",
     "constructs": "^10.0.0",
     "contentful-cli": "^1.19.1",
