@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "aws-cdk-lib": "^2.80",
-    "aws-sdk": "^2.1303.0",
+    "aws-sdk": "^2.1408.0",
     "constructs": "^10.0.0",
     "contentful-cli": "^1.19.1",
     "dotenv": "^16.0.3",
